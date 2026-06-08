@@ -1,6 +1,10 @@
 .DS_Store
 
+
 proposal/*
-!proposal/*.tex
-!proposal/*.bib
 !proposal/*.pdf
+
+papers/*
+
+presentation/*
+!presentation/*.pdf
