@@ -27,6 +27,30 @@ Everything is evaluated with a **2×2 factorial ablation** (causal vs. random re
 
 ---
 
+## Results at a glance
+
+**Causal retrieval is the accuracy driver** — exact-match gain over the OpenFlamingo baseline at every shot level; on AwA2 the 2- and 5-shot gains pass an exact paired McNemar test at p<0.001 (error bars: 95% CI of the paired per-sample difference):
+
+<p align="center">
+  <img src="presentation/figures/gqa-delta.png" width="49%" alt="GQA exact-match gain over baseline">
+  <img src="presentation/figures/awa2-delta.png" width="49%" alt="AwA2 exact-match gain over baseline">
+</p>
+
+**The grounding adapter drives causality** — with the adapter ON, the blindfold gap (EM with the real query image minus EM with a mismatched one) triples on AwA2 (+8.3 → +25.0), at no accuracy cost and 0.12% trained parameters:
+
+<p align="center">
+  <img src="presentation/figures/cf-awa2.png" width="80%" alt="AwA2 blindfold test and answer-flip rate">
+</p>
+
+**Full evaluation panels** — EM, answer confidence, blindfold ΔNLL, and span-JSD vs. number of shots, for the whole 2×2 ablation:
+
+<p align="center">
+  <img src="presentation/figures/eval-panels-gqa-grid.png" width="49%" alt="GQA evaluation panels">
+  <img src="presentation/figures/eval-panels-awa2-grid.png" width="49%" alt="AwA2 evaluation panels">
+</p>
+
+---
+
 ## Repository structure
 
 ```
@@ -37,7 +61,8 @@ CV_project/
 ├── src/
 │   └── project_x_iclp_pipeline.ipynb
 ├── presentation/                    
-│   └── project_x_presentation.pdf              
+│   ├── project_x_presentation.pdf
+│   └── figures/                  # all plots exported by the notebook
 ```
 
 - [proposal/proposal.pdf](proposal/proposal.pdf) — the original project proposal.

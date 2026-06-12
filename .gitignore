@@ -1,10 +1,24 @@
 .DS_Store
 
+# reference papers (large third-party PDFs)
+papers/
 
-proposal/*
-!proposal/*.pdf
+# LaTeX build artifacts (sources .tex/.bib, figures and final PDFs stay tracked)
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.tex
+*.bib
 
-papers/*
+presentation/figures/PLACEHOLDERS.md
 
-presentation/*
-!presentation/*.pdf
+# notebook figure exports when run outside the repo layout (e.g. Colab)
+src/figures_export/
